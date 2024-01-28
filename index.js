@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({
     origin:[process.env.FRONTEND_URL],
     method:["GET","POST","PUT","DELETE"],
-    // allowedHeaders: ['Content-Type', 'Authorization'],
+     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials:true,
 }))
 // Connect to MongoDB
