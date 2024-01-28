@@ -9,13 +9,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const corsOptions = {
-  origin: process.env.FRONTEND_URL, // specify the allowed origin
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // enable credentials (cookies, Authorization headers, etc.)
-};
-
-app.use(cors(corsOptions));
+app.use(cors({
+    origin:[process.env.FRONTEND_URL],
+    method:["GET","POST","PUT","DELETE"],
+    // allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials:true,
+}))
 // Connect to MongoDB
 connectDB();
 
